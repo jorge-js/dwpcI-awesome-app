@@ -2,9 +2,12 @@
   "name": "dwpc1-awesome-app-2024",
   "version": "0.0.0",
   "description": "proyecto de clase 2024",
-  "main": "app.js",
+   "type": "module",
+   "engines": {"node": "20.x","npm":"10.x"},
+    "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./app.js",
+          "dev": "node --watch ./app.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/jorge-js/dwpcI-awesome-app/issues"
   },
-  "homepage": "https://github.com/jorge-js/dwpcI-awesome-app#readme"
+  "homepage": "https://github.com/jorge-js/dwpcI-awesome-app#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
