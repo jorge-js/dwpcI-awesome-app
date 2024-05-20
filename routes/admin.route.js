@@ -5,6 +5,7 @@ import { Router } from 'express';
 const router = Router();
 
 // GET /add-product
+
 router.get('/add-product', (req, res, next) => {
   // Si la petición es post pasamos el siguiente
   // Middleware
@@ -19,7 +20,6 @@ router.get('/add-product', (req, res, next) => {
   </form>
   `);
 });
-
 // POST /add-product
 router.post('/add-product', (req, res) => {
   // Realizaremos la extracción de
