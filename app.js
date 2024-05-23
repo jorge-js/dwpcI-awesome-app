@@ -15,6 +15,11 @@ import { ROOT_DIR } from './helpers/paths.js'
 // Se importa path
 import path from 'path';
 
+//CONTROLADDOR ERROR
+const express = require('express');
+const httpErrorController = require('./controllers/httpError.controller');
+//TERMINA AQUI
+
 // Creando la instancia de express
 // que basicamente es un middleware
 const app = express();
@@ -26,6 +31,27 @@ const hbsTemplateEngine = engine({
   // Nombre del diseño por defecto
   defaultLayout: 'main',
 });
+
+
+//CONTRLADOR ERROR 
+         // Configura el motor de plantillas (aquí se usa EJS como ejemplo)
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Otras configuraciones de tu aplicación (rutas, middlewares, etc.)
+
+// Manejo de rutas no encontradas (404)
+app.use(httpErrorController.handle404);
+
+// Manejo de otros errores
+app.use(httpErrorController.handleError);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+//TERMINA EL ERROR
+
 
 // TE1. Se registra en la instancia de express
 app.engine('hbs', hbsTemplateEngine);
