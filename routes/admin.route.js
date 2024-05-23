@@ -16,7 +16,7 @@ router.get('/add-product', (req, res, next) => {
   console.log("📢 Sirviendo formulario...");
   res.render('add-product', {
     addProduct: `active`, 
-    viewStyle: './public/css/main.css',
+    viewStyle: '/public/ css/main.css',
     docTitle:"Add Product"});
 });
 
